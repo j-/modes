@@ -1,0 +1,45 @@
+.PermissionsGrid {
+	display: inline-grid;
+	grid-template-rows: repeat(4, 1fr);
+}
+
+.PermissionsGrid-all,
+.PermissionsGrid-user,
+.PermissionsGrid-group,
+.PermissionsGrid-other {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.PermissionsGrid label {
+	cursor: pointer;
+	padding: 0.5em;
+	border: 1px solid #ccc;
+	margin-right: -1px;
+	margin-bottom: -1px;
+}
+
+.PermissionsGrid label:hover {
+	background-color: #e0ebf0;
+}
+
+.PermissionsGrid label code {
+	margin: 0 0.5em;
+}
+
+.PermissionsGrid label input[type=checkbox] {
+	pointer-events: none;
+}
+
+.PermissionsGrid-S_IRWXUGO {
+	background-color: #ddd;
+}
+
+.PermissionsGrid-S_IRWXU,
+.PermissionsGrid-S_IRWXG,
+.PermissionsGrid-S_IRWXO,
+.PermissionsGrid-S_IRUGO,
+.PermissionsGrid-S_IWUGO,
+.PermissionsGrid-S_IXUGO {
+	background-color: #eee;
+}
