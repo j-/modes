@@ -1,0 +1,8 @@
+.FlagsItem {
+	display: flex;
+	flex-direction: row;
+}
+
+.FlagsItem-label {
+	flex: 1;
+}
