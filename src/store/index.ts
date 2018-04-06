@@ -1,4 +1,5 @@
 import { Reducer } from 'redux';
+import { isActionToggleFlag } from './actions';
 
 export interface ReducerState {
 	mode: number;
@@ -9,6 +10,20 @@ const DEFAULT_STATE: ReducerState = {
 };
 
 const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
+	if (isActionToggleFlag(action)) {
+		const { mode } = state;
+		const { flag } = action.data;
+		const isset = (mode & flag) === flag;
+		return {
+			...state,
+			mode: isset ?
+				// Clear bits
+				mode & ~flag :
+				// Set bits
+				mode | flag,
+		};
+	}
+
 	return state;
 };
 
