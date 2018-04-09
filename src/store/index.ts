@@ -1,5 +1,6 @@
 import { Reducer } from 'redux';
 import { isActionToggleFlag } from './actions';
+import { formatSymbolString } from './symbol';
 
 export interface ReducerState {
 	mode: number;
@@ -36,3 +37,5 @@ export const getModeStringDecimal = (state: ReducerState): string => state.mode.
 export const getModeStringOctal = (state: ReducerState): string => state.mode.toString(8).padStart(4, '0');
 
 export const getModeStringBinary = (state: ReducerState): string => state.mode.toString(2);
+
+export const getSymbolString = (state: ReducerState): string => formatSymbolString(state.mode);
