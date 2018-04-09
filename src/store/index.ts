@@ -33,6 +33,6 @@ export const getModeNumber = (state: ReducerState): number => state.mode;
 
 export const getModeStringDecimal = (state: ReducerState): string => state.mode.toString(10);
 
-export const getModeStringOctal = (state: ReducerState): string => '0' + state.mode.toString(8);
+export const getModeStringOctal = (state: ReducerState): string => state.mode.toString(8).padStart(4, '0');
 
 export const getModeStringBinary = (state: ReducerState): string => state.mode.toString(2);
