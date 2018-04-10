@@ -8,6 +8,7 @@ export const S_IFBLK  = 0o060000;
 export const S_IFDIR  = 0o040000;
 export const S_IFCHR  = 0o020000;
 export const S_IFIFO  = 0o010000;
+
 export const S_ISUID  = 0o004000;
 export const S_ISGID  = 0o002000;
 export const S_ISVTX  = 0o001000;

@@ -3,7 +3,6 @@ import FlagsItem from './FlagsItem';
 import './FlagsList.css';
 
 import {
-	S_IFMT,
 	S_IFSOCK,
 	S_IFLNK,
 	S_IFREG,
@@ -11,6 +10,7 @@ import {
 	S_IFDIR,
 	S_IFCHR,
 	S_IFIFO,
+
 	S_ISUID,
 	S_ISGID,
 	S_ISVTX,
@@ -39,7 +39,6 @@ import {
 
 const FlagsList: React.StatelessComponent = () => (
 	<div className="FlagsList">
-		<FlagsItem flag={S_IFMT}>S_IFMT</FlagsItem>
 		<FlagsItem flag={S_IFSOCK}>S_IFSOCK</FlagsItem>
 		<FlagsItem flag={S_IFLNK}>S_IFLNK</FlagsItem>
 		<FlagsItem flag={S_IFREG}>S_IFREG</FlagsItem>
@@ -47,6 +46,7 @@ const FlagsList: React.StatelessComponent = () => (
 		<FlagsItem flag={S_IFDIR}>S_IFDIR</FlagsItem>
 		<FlagsItem flag={S_IFCHR}>S_IFCHR</FlagsItem>
 		<FlagsItem flag={S_IFIFO}>S_IFIFO</FlagsItem>
+		<br />
 		<FlagsItem flag={S_ISUID}>S_ISUID</FlagsItem>
 		<FlagsItem flag={S_ISGID}>S_ISGID</FlagsItem>
 		<FlagsItem flag={S_ISVTX}>S_ISVTX</FlagsItem>
