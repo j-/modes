@@ -1,0 +1,107 @@
+.PermissionsSymbolic {
+	display: inline-grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(10, 1fr);
+}
+
+.PermissionsSymbolic label {
+	cursor: pointer;
+	padding: 0.5em;
+	border: 1px solid #ccc;
+	margin-right: -1px;
+	margin-bottom: -1px;
+}
+
+.PermissionsSymbolic label:hover {
+	background-color: #e0ebf0;
+}
+
+.PermissionsSymbolic label code {
+	margin: 0 0.5em;
+}
+
+.PermissionsSymbolic label input[type=checkbox] {
+	pointer-events: none;
+}
+
+.PermissionsSymbolic-S_IRWXUGO {
+	background-color: #ddd;
+}
+
+.PermissionsSymbolic-S_IRWXU,
+.PermissionsSymbolic-S_IRWXG,
+.PermissionsSymbolic-S_IRWXO,
+.PermissionsSymbolic-S_IRUGO,
+.PermissionsSymbolic-S_IWUGO,
+.PermissionsSymbolic-S_IXUGO {
+	background-color: #eee;
+}
+
+.PermissionsSymbolic-S_IRWXU,
+.PermissionsSymbolic-S_IRWXG,
+.PermissionsSymbolic-S_IRWXO {
+	grid-row: 1;
+	grid-column: span 3;
+}
+
+.PermissionsSymbolic-S_IRWXU {
+	grid-column: 2 / span 3;
+}
+
+.PermissionsSymbolic-S_IRUGO,
+.PermissionsSymbolic-S_IWUGO,
+.PermissionsSymbolic-S_IXUGO {
+	grid-row: 2;
+}
+
+.PermissionsSymbolic-S_IRWXUGO {
+	grid-row: 3;
+}
+
+.PermissionsSymbolic-S_IRUSR,
+.PermissionsSymbolic-S_IWUSR,
+.PermissionsSymbolic-S_IXUSR,
+.PermissionsSymbolic-S_IRGRP,
+.PermissionsSymbolic-S_IWGRP,
+.PermissionsSymbolic-S_IXGRP,
+.PermissionsSymbolic-S_IROTH,
+.PermissionsSymbolic-S_IWOTH,
+.PermissionsSymbolic-S_IXOTH {
+	grid-row: 3;
+}
+
+.PermissionsSymbolic-S_IRWXUGO +
+.PermissionsSymbolic-S_IRUGO { grid-column-start: 2; }
+
+.PermissionsSymbolic-S_IRWXUGO +
+.PermissionsSymbolic-S_IRUGO +
+.PermissionsSymbolic-S_IWUGO { grid-column-start: 3; }
+
+.PermissionsSymbolic-S_IRWXUGO +
+.PermissionsSymbolic-S_IRUGO +
+.PermissionsSymbolic-S_IWUGO +
+.PermissionsSymbolic-S_IXUGO { grid-column-start: 4; }
+
+.PermissionsSymbolic-S_IXUSR +
+.PermissionsSymbolic-S_IRUGO { grid-column-start: 5; }
+
+.PermissionsSymbolic-S_IXUSR +
+.PermissionsSymbolic-S_IRUGO +
+.PermissionsSymbolic-S_IWUGO { grid-column-start: 6; }
+
+.PermissionsSymbolic-S_IXUSR +
+.PermissionsSymbolic-S_IRUGO +
+.PermissionsSymbolic-S_IWUGO +
+.PermissionsSymbolic-S_IXUGO { grid-column-start: 7; }
+
+.PermissionsSymbolic-S_IXGRP +
+.PermissionsSymbolic-S_IRUGO { grid-column-start: 8; }
+
+.PermissionsSymbolic-S_IXGRP +
+.PermissionsSymbolic-S_IRUGO +
+.PermissionsSymbolic-S_IWUGO { grid-column-start: 9; }
+
+.PermissionsSymbolic-S_IXGRP +
+.PermissionsSymbolic-S_IRUGO +
+.PermissionsSymbolic-S_IWUGO +
+.PermissionsSymbolic-S_IXUGO { grid-column-start: 10; }
