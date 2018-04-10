@@ -1,0 +1,22 @@
+.Inputs {
+	display: flex;
+}
+
+.Inputs-section-octal,
+.Inputs-section-decimal {
+	flex: 2;
+}
+
+.Inputs-section-symbolic {
+	flex: 3;
+}
+
+.Inputs-section {
+	padding: 0.5em;
+}
+
+.Inputs-section input {
+	width: 100%;
+	font: 3em monospace;
+	box-sizing: border-box;
+}
