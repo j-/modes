@@ -1,13 +1,17 @@
 import { Reducer } from 'redux';
-import { isActionToggleFlag } from './actions';
+import { isActionToggleFlag, isActionSetOctalValue, isActionSetDecimalValue } from './actions';
 import { formatSymbolicString } from './symbolic';
 
 export interface ReducerState {
 	mode: number;
+	octalValue: string | null;
+	decimalValue: string | null;
 }
 
 const DEFAULT_STATE: ReducerState = {
 	mode: 0o755,
+	octalValue: null,
+	decimalValue: null,
 };
 
 const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
@@ -22,6 +26,32 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 				mode & ~flag :
 				// Set bits
 				mode | flag,
+			octalValue: null,
+			decimalValue: null,
+		};
+	}
+
+	if (isActionSetOctalValue(action)) {
+		const { value } = action.data;
+		const parsed = parseInt(value, 8);
+		const mode = isNaN(parsed) ? state.mode : parsed;
+		return {
+			...state,
+			mode,
+			octalValue: value,
+			decimalValue: null,
+		};
+	}
+
+	if (isActionSetDecimalValue(action)) {
+		const { value } = action.data;
+		const parsed = parseInt(value, 10);
+		const mode = isNaN(parsed) ? state.mode : parsed;
+		return {
+			...state,
+			mode,
+			octalValue: null,
+			decimalValue: value,
 		};
 	}
 
@@ -39,3 +69,15 @@ export const getModeStringOctal = (state: ReducerState): string => state.mode.to
 export const getModeStringBinary = (state: ReducerState): string => state.mode.toString(2);
 
 export const getSymbolString = (state: ReducerState): string => formatSymbolicString(state.mode);
+
+export const getOctalValue = (state: ReducerState): string | null => state.octalValue;
+
+export const getOctalInputValue = (state: ReducerState): string => (
+	getOctalValue(state) || getModeStringOctal(state)
+);
+
+export const getDecimalValue = (state: ReducerState): string | null => state.decimalValue;
+
+export const getDecimalInputValue = (state: ReducerState): string => (
+	getDecimalValue(state) || getModeStringDecimal(state)
+);
