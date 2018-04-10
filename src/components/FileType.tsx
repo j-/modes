@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import {
+	S_IFMT,
 	S_IFSOCK,
 	S_IFLNK,
 	S_IFREG,
@@ -14,18 +15,23 @@ export interface FileTypeProps {
 	mode: number;
 }
 
+const getFileType = (mode: number): string | null => {
+	switch (mode & S_IFMT) {
+		case S_IFSOCK: return 'Socket';
+		case S_IFLNK: return 'Link';
+		case S_IFREG: return 'Regular';
+		case S_IFBLK: return 'Block';
+		case S_IFDIR: return 'Directory';
+		case S_IFCHR: return 'Character';
+		case S_IFIFO: return 'Pipe';
+		default: return null;
+	}
+};
+
 const FileType: React.StatelessComponent<FileTypeProps> = ({ mode }) => {
-	const textContent = (
-		(mode & S_IFSOCK) === S_IFSOCK ? 'Socket' :
-		(mode & S_IFLNK) === S_IFLNK ? 'Link' :
-		(mode & S_IFREG) === S_IFREG ? 'Regular' :
-		(mode & S_IFBLK) === S_IFBLK ? 'Block' :
-		(mode & S_IFDIR) === S_IFDIR ? 'Directory' :
-		(mode & S_IFCHR) === S_IFCHR ? 'Character' :
-		(mode & S_IFIFO) === S_IFIFO ? 'Pipe' :
-		'Unknown'
-	);
-	return <span className="FileType">{textContent}</span>;
+	const fileType = getFileType(mode);
+	const content = fileType || <em>Unknown</em>;
+	return <span className="FileType">{content}</span>;
 };
 
 export default FileType;
