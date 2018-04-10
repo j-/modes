@@ -24,7 +24,13 @@ const mapDispatchToProps = (dispatch: Dispatch<ActionToggleFlag>, props: OwnProp
 	onChange: () => dispatch(toggleFlag(props.flag)),
 });
 
+const mergeProps = (stateProps: StateProps, dispatchProps: DispatchProps) => ({
+	...stateProps,
+	...dispatchProps,
+});
+
 export default connect<StateProps, DispatchProps, OwnProps>(
 	mapStateToProps,
 	mapDispatchToProps,
+	mergeProps,
 )(Checkbox);
