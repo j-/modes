@@ -47,7 +47,7 @@ export const formatGroup = (mode: number): string => (
 export const formatOther = (mode: number): string => (
 	(mode & S_IROTH ? 'r' : '-') +
 	(mode & S_IWOTH ? 'w' : '-') +
-	(mode & S_ISVTX ? 't' : (mode & S_IXOTH ? 'x' : '-'))
+	((mode & S_ISVTX) > 0 && (mode & S_IXOTH) === 0 ? 'T' : (mode & S_ISVTX ? 't' : (mode & S_IXOTH ? 'x' : '-')))
 );
 
 export const formatSymbolicString = (mode: number): string => (
