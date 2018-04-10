@@ -60,24 +60,38 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 
 export default reducer;
 
-export const getModeNumber = (state: ReducerState): number => state.mode;
-
-export const getModeStringDecimal = (state: ReducerState): string => state.mode.toString(10);
-
-export const getModeStringOctal = (state: ReducerState): string => state.mode.toString(8).padStart(4, '0');
-
-export const getModeStringBinary = (state: ReducerState): string => state.mode.toString(2);
-
-export const getSymbolString = (state: ReducerState): string => formatSymbolicString(state.mode);
-
-export const getOctalValue = (state: ReducerState): string | null => state.octalValue;
-
-export const getOctalInputValue = (state: ReducerState): string => (
-	getOctalValue(state) || getModeStringOctal(state)
+export const getModeNumber = (state: ReducerState): number => (
+	state.mode
 );
 
-export const getDecimalValue = (state: ReducerState): string | null => state.decimalValue;
+export const getModeStringDecimal = (state: ReducerState): string => (
+	state.mode.toString(10)
+);
+
+export const getModeStringOctal = (state: ReducerState): string => (
+	state.mode.toString(8).padStart(4, '0')
+);
+
+export const getModeStringBinary = (state: ReducerState): string => (
+	state.mode.toString(2)
+);
+
+export const getSymbolString = (state: ReducerState): string => (
+	formatSymbolicString(state.mode)
+);
+
+export const getOctalRawValue = (state: ReducerState): string | null => (
+	state.octalValue
+);
+
+export const getOctalInputValue = (state: ReducerState): string => (
+	getOctalRawValue(state) || getModeStringOctal(state)
+);
+
+export const getDecimalRawValue = (state: ReducerState): string | null => (
+	state.decimalValue
+);
 
 export const getDecimalInputValue = (state: ReducerState): string => (
-	getDecimalValue(state) || getModeStringDecimal(state)
+	getDecimalRawValue(state) || getModeStringDecimal(state)
 );
