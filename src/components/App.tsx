@@ -1,8 +1,7 @@
 import * as React from 'react';
 import FileType from '../containers/FileType';
 import Inputs from './Inputs';
-import PermissionsGrid from '../containers/PermissionsGrid';
-import PermissionsSymbolic from '../containers/PermissionsSymbolic';
+import Editors from '../containers/Editors';
 import FlagsList from './FlagsList';
 
 const App: React.StatelessComponent = () => (
@@ -19,12 +18,7 @@ const App: React.StatelessComponent = () => (
 		<br />
 		<br />
 
-		<PermissionsGrid />
-
-		<br />
-		<br />
-
-		<PermissionsSymbolic />
+		<Editors />
 
 		<br />
 		<br />

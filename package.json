@@ -14,12 +14,14 @@
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.3",
     "@types/jest": "^22.2.2",
     "@types/node": "^9.6.2",
     "@types/puppeteer": "^1.2.1",
     "@types/react": "^16.3.5",
     "@types/react-dom": "^16.0.4",
     "@types/react-redux": "^5.0.15",
+    "classnames": "^2.2.5",
     "puppeteer": "^1.2.0",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",

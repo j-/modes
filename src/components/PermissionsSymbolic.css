@@ -1,5 +1,5 @@
 .PermissionsSymbolic {
-	display: inline-grid;
+	display: grid;
 	grid-template-rows: repeat(3, 1fr);
 	grid-template-columns: repeat(10, 1fr);
 }

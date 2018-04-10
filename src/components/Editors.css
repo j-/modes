@@ -1,0 +1,15 @@
+.Editors {
+	display: flex;
+}
+
+.Editors--horizontal {
+	flex-direction: row;
+}
+
+.Editors--vertical {
+	flex-direction: column;
+}
+
+.Editors-editor {
+	flex: 1;
+}
