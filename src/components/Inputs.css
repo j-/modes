@@ -19,4 +19,12 @@
 	width: 100%;
 	font: 3em monospace;
 	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 0.25rem;
+	padding: 0.25em;
+	outline: none;
+}
+
+.Inputs-section input:focus {
+	border-color: #09c;
 }
