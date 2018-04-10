@@ -16,9 +16,11 @@ const Editors: React.StatelessComponent<EditorsProps> = ({ showFlag }) => (
 		})}
 	>
 		<div className="Editors-editor">
+			<h2>Grid edit</h2>
 			<PermissionsGrid />
 		</div>
 		<div className="Editors-editor">
+			<h2>Symbolic edit</h2>
 			<PermissionsSymbolic />
 		</div>
 	</div>
