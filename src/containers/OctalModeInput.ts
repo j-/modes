@@ -4,10 +4,12 @@ import { ReducerState, getModeStringOctal } from '../store';
 
 interface StateProps {
 	value?: string | string[] | number;
+	type?: string;
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
 	value: getModeStringOctal(state),
+	type: 'number',
 });
 
 export default connect<StateProps>(
