@@ -7,7 +7,7 @@ export interface ReducerState {
 }
 
 const DEFAULT_STATE: ReducerState = {
-	mode: 0o777,
+	mode: 0o755,
 };
 
 const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
