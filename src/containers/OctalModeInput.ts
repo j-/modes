@@ -1,12 +1,21 @@
 import { connect } from 'react-redux';
 import { Dispatch, AnyAction } from 'redux';
+import * as classNames from 'classnames';
 import TextInput, { TextInputProps as OwnProps } from '../components/TextInput';
-import { ReducerState, getOctalInputValue } from '../store';
 import { setOctalValue } from '../store/actions';
+import './ModeInput.css';
+
+import {
+	ReducerState,
+	getOctalInputValue,
+	isOctalInputValid,
+	isOctalInputEditing,
+} from '../store';
 
 interface StateProps {
 	value?: string | string[] | number;
 	type?: string;
+	className?: string;
 }
 
 interface DispatchProps {
@@ -16,6 +25,10 @@ interface DispatchProps {
 const mapStateToProps = (state: ReducerState): StateProps => ({
 	value: getOctalInputValue(state),
 	type: 'number',
+	className: classNames('ModeInput', {
+		'ModeInput--is-invalid': !isOctalInputValid(state),
+		'ModeInput--is-editing': isOctalInputEditing(state),
+	}),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): DispatchProps => ({

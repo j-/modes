@@ -1,0 +1,11 @@
+.ModeInput {
+	color: #666;
+}
+
+.ModeInput--is-invalid {
+	background-color: hsl(0, 100%, 90%);
+}
+
+.ModeInput--is-editing {
+	color: #000;
+}

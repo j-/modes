@@ -88,10 +88,26 @@ export const getOctalInputValue = (state: ReducerState): string => (
 	getOctalRawValue(state) || getModeStringOctal(state)
 );
 
+export const isOctalInputEditing = (state: ReducerState): boolean => (
+	state.octalValue !== null
+);
+
+export const isOctalInputValid = (state: ReducerState): boolean => (
+	state.octalValue === null || !isNaN(parseInt(state.octalValue, 8))
+);
+
 export const getDecimalRawValue = (state: ReducerState): string | null => (
 	state.decimalValue
 );
 
 export const getDecimalInputValue = (state: ReducerState): string => (
 	getDecimalRawValue(state) || getModeStringDecimal(state)
+);
+
+export const isDecimalInputEditing = (state: ReducerState): boolean => (
+	state.decimalValue !== null
+);
+
+export const isDecimalInputValid = (state: ReducerState): boolean => (
+	state.decimalValue === null || !isNaN(parseInt(state.decimalValue, 10))
 );
