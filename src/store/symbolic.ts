@@ -50,7 +50,7 @@ export const formatOther = (mode: number): string => (
 	(mode & S_ISVTX ? 't' : (mode & S_IXOTH ? 'x' : '-'))
 );
 
-export const formatSymbolString = (mode: number): string => (
+export const formatSymbolicString = (mode: number): string => (
 	formatFileType(mode) +
 	formatUser(mode) +
 	formatGroup(mode) +

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import OctalModeInput from '../containers/OctalModeInput';
 import DecimalModeInput from '../containers/DecimalModeInput';
-import SymbolInput from '../containers/SymbolInput';
+import SymbolicInput from '../containers/SymbolicInput';
 import './Inputs.css';
 
 const Inputs: React.StatelessComponent = () => (
@@ -16,7 +16,7 @@ const Inputs: React.StatelessComponent = () => (
 		</div>
 		<div className="Inputs-section Inputs-section-symbolic">
 			<label htmlFor="Inputs-input-symbolic">Symbolic</label>
-			<SymbolInput id="Inputs-input-symbolic" />
+			<SymbolicInput id="Inputs-input-symbolic" />
 		</div>
 	</div>
 );
