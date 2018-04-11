@@ -24,6 +24,7 @@
 	border-radius: 0.25rem;
 	padding: 1.5em 0.33em 0.33em;
 	outline: none;
+	box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.1);
 }
 
 .Inputs-input-wrapper input:focus {
