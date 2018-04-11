@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Card from './Card';
 import FlagsItem from './FlagsItem';
 import './FlagsList.css';
 
@@ -38,7 +39,10 @@ import {
 } from '../stat';
 
 const FlagsList: React.StatelessComponent = () => (
-	<div className="FlagsList">
+	<Card className="FlagsList">
+		<h2>All flags</h2>
+
+		<h3>File types</h3>
 		<FlagsItem flag={S_IFSOCK}>S_IFSOCK</FlagsItem>
 		<FlagsItem flag={S_IFLNK}>S_IFLNK</FlagsItem>
 		<FlagsItem flag={S_IFREG}>S_IFREG</FlagsItem>
@@ -46,32 +50,37 @@ const FlagsList: React.StatelessComponent = () => (
 		<FlagsItem flag={S_IFDIR}>S_IFDIR</FlagsItem>
 		<FlagsItem flag={S_IFCHR}>S_IFCHR</FlagsItem>
 		<FlagsItem flag={S_IFIFO}>S_IFIFO</FlagsItem>
-		<br />
+
+		<h3>Sticky bits</h3>
 		<FlagsItem flag={S_ISUID}>S_ISUID</FlagsItem>
 		<FlagsItem flag={S_ISGID}>S_ISGID</FlagsItem>
 		<FlagsItem flag={S_ISVTX}>S_ISVTX</FlagsItem>
-		<br />
+
+		<h3>User</h3>
 		<FlagsItem flag={S_IRWXU}>S_IRWXU</FlagsItem>
 		<FlagsItem flag={S_IRUSR}>S_IRUSR</FlagsItem>
 		<FlagsItem flag={S_IWUSR}>S_IWUSR</FlagsItem>
 		<FlagsItem flag={S_IXUSR}>S_IXUSR</FlagsItem>
-		<br />
+
+		<h3>Group</h3>
 		<FlagsItem flag={S_IRWXG}>S_IRWXG</FlagsItem>
 		<FlagsItem flag={S_IRGRP}>S_IRGRP</FlagsItem>
 		<FlagsItem flag={S_IWGRP}>S_IWGRP</FlagsItem>
 		<FlagsItem flag={S_IXGRP}>S_IXGRP</FlagsItem>
-		<br />
+
+		<h3>Other</h3>
 		<FlagsItem flag={S_IRWXO}>S_IRWXO</FlagsItem>
 		<FlagsItem flag={S_IROTH}>S_IROTH</FlagsItem>
 		<FlagsItem flag={S_IWOTH}>S_IWOTH</FlagsItem>
 		<FlagsItem flag={S_IXOTH}>S_IXOTH</FlagsItem>
-		<br />
+
+		<h3>All</h3>
 		<FlagsItem flag={S_IRWXUGO}>S_IRWXUGO</FlagsItem>
 		<FlagsItem flag={S_IALLUGO}>S_IALLUGO</FlagsItem>
 		<FlagsItem flag={S_IRUGO}>S_IRUGO</FlagsItem>
 		<FlagsItem flag={S_IWUGO}>S_IWUGO</FlagsItem>
 		<FlagsItem flag={S_IXUGO}>S_IXUGO</FlagsItem>
-	</div>
+	</Card>
 );
 
 export default FlagsList;
