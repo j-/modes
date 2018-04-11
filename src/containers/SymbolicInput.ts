@@ -20,6 +20,9 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 	readOnly: true,
 });
 
+const mapDispatchToProps = () => ({});
+
 export default connect<StateProps>(
 	mapStateToProps,
+	mapDispatchToProps,
 )(TextInput);
