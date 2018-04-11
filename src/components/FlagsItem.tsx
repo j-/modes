@@ -7,14 +7,9 @@ export interface FlagsItemProps {
 }
 
 const FlagsItem: React.StatelessComponent<FlagsItemProps> = ({ flag, children }) => (
-	<label className="FlagsItem">
-		<div className="FlagsItem-checkbox">
-			<FlagCheckbox flag={flag} />
-		</div>
-		<div className="FlagsItem-label">
-			{children}
-		</div>
-	</label>
+	<FlagCheckbox className="FlagsItem" flag={flag}>
+		{children}
+	</FlagCheckbox>
 );
 
 export default FlagsItem;

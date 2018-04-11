@@ -27,113 +27,91 @@ import {
 
 const PermissionsSymbolic: React.StatelessComponent = () => (
 	<div className="PermissionsSymbolic">
-		<label className="PermissionsSymbolic-S_IRWXUGO">
-			<FlagCheckbox flag={S_IRWXUGO} />
+		<FlagCheckbox className="PermissionsSymbolic-S_IRWXUGO" flag={S_IRWXUGO}>
 			<MaybeFlagLabel name="S_IRWXUGO" />
 			<strong>All</strong>
-		</label>
+		</FlagCheckbox>
 
-		<label className="PermissionsSymbolic-S_IRUGO">
-			<FlagCheckbox flag={S_IRUGO} />
+		<FlagCheckbox className="PermissionsSymbolic-S_IRUGO" flag={S_IRUGO}>
 			<MaybeFlagLabel name="S_IRUGO" />
 			<strong>r</strong>
-		</label>
-		<label className="PermissionsSymbolic-S_IWUGO">
-			<FlagCheckbox flag={S_IWUGO} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IWUGO" flag={S_IWUGO}>
 			<MaybeFlagLabel name="S_IWUGO" />
 			<strong>w</strong>
-		</label>
-		<label className="PermissionsSymbolic-S_IXUGO">
-			<FlagCheckbox flag={S_IXUGO} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IXUGO" flag={S_IXUGO}>
 			<MaybeFlagLabel name="S_IXUGO" />
 			<strong>x</strong>
-		</label>
+		</FlagCheckbox>
 
-		<label className="PermissionsSymbolic-S_IRWXU">
-			<FlagCheckbox flag={S_IRWXU} />
+		<FlagCheckbox className="PermissionsSymbolic-S_IRWXU" flag={S_IRWXU}>
 			<MaybeFlagLabel name="S_IRWXU" />
 			<strong>User</strong>
-		</label>
-		<label className="PermissionsSymbolic-S_IRUSR">
-			<FlagCheckbox flag={S_IRUSR} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IRUSR" flag={S_IRUSR}>
 			<MaybeFlagLabel name="S_IRUSR" />
-		</label>
-		<label className="PermissionsSymbolic-S_IWUSR">
-			<FlagCheckbox flag={S_IWUSR} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IWUSR" flag={S_IWUSR}>
 			<MaybeFlagLabel name="S_IWUSR" />
-		</label>
-		<label className="PermissionsSymbolic-S_IXUSR">
-			<FlagCheckbox flag={S_IXUSR} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IXUSR" flag={S_IXUSR}>
 			<MaybeFlagLabel name="S_IXUSR" />
-		</label>
+		</FlagCheckbox>
 
-		<label className="PermissionsSymbolic-S_IRUGO">
-			<FlagCheckbox flag={S_IRUGO} />
+		<FlagCheckbox className="PermissionsSymbolic-S_IRUGO" flag={S_IRUGO}>
 			<MaybeFlagLabel name="S_IRUGO" />
 			<strong>r</strong>
-		</label>
-		<label className="PermissionsSymbolic-S_IWUGO">
-			<FlagCheckbox flag={S_IWUGO} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IWUGO" flag={S_IWUGO}>
 			<MaybeFlagLabel name="S_IWUGO" />
 			<strong>w</strong>
-		</label>
-		<label className="PermissionsSymbolic-S_IXUGO">
-			<FlagCheckbox flag={S_IXUGO} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IXUGO" flag={S_IXUGO}>
 			<MaybeFlagLabel name="S_IXUGO" />
 			<strong>x</strong>
-		</label>
+		</FlagCheckbox>
 
-		<label className="PermissionsSymbolic-S_IRWXG">
-			<FlagCheckbox flag={S_IRWXG} />
+		<FlagCheckbox className="PermissionsSymbolic-S_IRWXG" flag={S_IRWXG}>
 			<MaybeFlagLabel name="S_IRWXG" />
 			<strong>Group</strong>
-		</label>
-		<label className="PermissionsSymbolic-S_IRGRP">
-			<FlagCheckbox flag={S_IRGRP} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IRGRP" flag={S_IRGRP}>
 			<MaybeFlagLabel name="S_IRGRP" />
-		</label>
-		<label className="PermissionsSymbolic-S_IWGRP">
-			<FlagCheckbox flag={S_IWGRP} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IWGRP" flag={S_IWGRP}>
 			<MaybeFlagLabel name="S_IWGRP" />
-		</label>
-		<label className="PermissionsSymbolic-S_IXGRP">
-			<FlagCheckbox flag={S_IXGRP} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IXGRP" flag={S_IXGRP}>
 			<MaybeFlagLabel name="S_IXGRP" />
-		</label>
+		</FlagCheckbox>
 
-		<label className="PermissionsSymbolic-S_IRUGO">
-			<FlagCheckbox flag={S_IRUGO} />
+		<FlagCheckbox className="PermissionsSymbolic-S_IRUGO" flag={S_IRUGO}>
 			<MaybeFlagLabel name="S_IRUGO" />
 			<strong>r</strong>
-		</label>
-		<label className="PermissionsSymbolic-S_IWUGO">
-			<FlagCheckbox flag={S_IWUGO} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IWUGO" flag={S_IWUGO}>
 			<MaybeFlagLabel name="S_IWUGO" />
 			<strong>w</strong>
-		</label>
-		<label className="PermissionsSymbolic-S_IXUGO">
-			<FlagCheckbox flag={S_IXUGO} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IXUGO" flag={S_IXUGO}>
 			<MaybeFlagLabel name="S_IXUGO" />
 			<strong>x</strong>
-		</label>
+		</FlagCheckbox>
 
-		<label className="PermissionsSymbolic-S_IRWXO">
-			<FlagCheckbox flag={S_IRWXO} />
+		<FlagCheckbox className="PermissionsSymbolic-S_IRWXO" flag={S_IRWXO}>
 			<MaybeFlagLabel name="S_IRWXO" />
 			<strong>Other</strong>
-		</label>
-		<label className="PermissionsSymbolic-S_IROTH">
-			<FlagCheckbox flag={S_IROTH} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IROTH" flag={S_IROTH}>
 			<MaybeFlagLabel name="S_IROTH" />
-		</label>
-		<label className="PermissionsSymbolic-S_IWOTH">
-			<FlagCheckbox flag={S_IWOTH} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IWOTH" flag={S_IWOTH}>
 			<MaybeFlagLabel name="S_IWOTH" />
-		</label>
-		<label className="PermissionsSymbolic-S_IXOTH">
-			<FlagCheckbox flag={S_IXOTH} />
+		</FlagCheckbox>
+		<FlagCheckbox className="PermissionsSymbolic-S_IXOTH" flag={S_IXOTH}>
 			<MaybeFlagLabel name="S_IXOTH" />
-		</label>
+		</FlagCheckbox>
 	</div>
 );
 

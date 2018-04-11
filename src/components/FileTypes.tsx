@@ -23,45 +23,44 @@ const FileTypes: React.StatelessComponent = () => (
 
 			<fieldset>
 				<div className="FileTypes-radios">
-					<label>
-						<FileTypeUnknownRadio name="FileTypeRadio" />
+					<FileTypeUnknownRadio name="FileTypeRadio">
 						<strong>Unknown</strong>
-					</label>
-					<label>
-						<FileTypeRadio name="FileTypeRadio" flag={S_IFSOCK} />
+					</FileTypeUnknownRadio>
+
+					<FileTypeRadio flag={S_IFSOCK}>
 						<MaybeFlagLabel name="S_IFSOCK" />
 						<strong>Socket</strong>
-					</label>
-					<label>
-						<FileTypeRadio name="FileTypeRadio" flag={S_IFLNK} />
+					</FileTypeRadio>
+
+					<FileTypeRadio name="FileTypeRadio" flag={S_IFLNK}>
 						<MaybeFlagLabel name="S_IFLNK" />
 						<strong>Link</strong>
-					</label>
-					<label>
-						<FileTypeRadio name="FileTypeRadio" flag={S_IFREG} />
+					</FileTypeRadio>
+
+					<FileTypeRadio name="FileTypeRadio" flag={S_IFREG}>
 						<MaybeFlagLabel name="S_IFREG" />
 						<strong>Regular</strong>
-					</label>
-					<label>
-						<FileTypeRadio name="FileTypeRadio" flag={S_IFBLK} />
+					</FileTypeRadio>
+
+					<FileTypeRadio name="FileTypeRadio" flag={S_IFBLK}>
 						<MaybeFlagLabel name="S_IFBLK" />
 						<strong>Block</strong>
-					</label>
-					<label>
-						<FileTypeRadio name="FileTypeRadio" flag={S_IFDIR} />
+					</FileTypeRadio>
+
+					<FileTypeRadio name="FileTypeRadio" flag={S_IFDIR}>
 						<MaybeFlagLabel name="S_IFDIR" />
 						<strong>Directory</strong>
-					</label>
-					<label>
-						<FileTypeRadio name="FileTypeRadio" flag={S_IFCHR} />
+					</FileTypeRadio>
+
+					<FileTypeRadio name="FileTypeRadio" flag={S_IFCHR}>
 						<MaybeFlagLabel name="S_IFCHR" />
 						<strong>Character</strong>
-					</label>
-					<label>
-						<FileTypeRadio name="FileTypeRadio" flag={S_IFIFO} />
+					</FileTypeRadio>
+
+					<FileTypeRadio name="FileTypeRadio" flag={S_IFIFO}>
 						<MaybeFlagLabel name="S_IFIFO" />
 						<strong>Pipe</strong>
-					</label>
+					</FileTypeRadio>
 				</div>
 			</fieldset>
 		</Card>

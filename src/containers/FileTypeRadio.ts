@@ -1,36 +1,23 @@
 import { connect } from 'react-redux';
-import Radio from '../components/Radio';
+import InputGroup, { InputGroupProps } from '../components/InputGroup';
 import { ReducerState, getFileType } from '../store';
 import { setFileType, ActionSetFileType } from '../store/actions';
 import { Dispatch } from 'redux';
 
-interface StateProps {
-	checked: boolean;
-}
-
-interface DispatchProps {
-	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-interface OwnProps {
+interface OwnProps extends InputGroupProps {
 	flag: number;
 }
 
-const mapStateToProps = (state: ReducerState, props: OwnProps): StateProps => ({
+const mapStateToProps = (state: ReducerState, props: OwnProps): InputGroupProps => ({
+	type: 'radio',
 	checked: getFileType(state) === props.flag,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<ActionSetFileType>, props: OwnProps): DispatchProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<ActionSetFileType>, props: OwnProps): InputGroupProps => ({
 	onChange: () => dispatch(setFileType(props.flag)),
 });
 
-const mergeProps = (stateProps: StateProps, dispatchProps: DispatchProps) => ({
-	...stateProps,
-	...dispatchProps,
-});
-
-export default connect<StateProps, DispatchProps, OwnProps>(
+export default connect<InputGroupProps, InputGroupProps, OwnProps>(
 	mapStateToProps,
 	mapDispatchToProps,
-	mergeProps,
-)(Radio);
+)(InputGroup);
