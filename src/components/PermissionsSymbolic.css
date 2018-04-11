@@ -5,26 +5,9 @@
 }
 
 .PermissionsSymbolic label {
-	cursor: pointer;
-	padding: 0.5em;
-	border: 1px solid #ccc;
+	flex: 1;
 	margin-right: -1px;
 	margin-bottom: -1px;
-	display: flex;
-	flex-direction: row;
-	align-items: baseline;
-}
-
-.PermissionsSymbolic label:hover {
-	background-color: #e0ebf0;
-}
-
-.PermissionsSymbolic label code {
-	margin: 0 0.5em;
-}
-
-.PermissionsSymbolic label input[type=checkbox] {
-	pointer-events: none;
 }
 
 .PermissionsSymbolic-S_IRWXUGO {

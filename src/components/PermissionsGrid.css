@@ -5,26 +5,9 @@
 }
 
 .PermissionsGrid label {
-	cursor: pointer;
-	padding: 0.5em;
-	border: 1px solid #ccc;
+	flex: 1;
 	margin-right: -1px;
 	margin-bottom: -1px;
-	display: flex;
-	flex-direction: row;
-	align-items: baseline;
-}
-
-.PermissionsGrid label:hover {
-	background-color: #e0ebf0;
-}
-
-.PermissionsGrid label code {
-	margin: 0 0.5em;
-}
-
-.PermissionsGrid label input[type=checkbox] {
-	pointer-events: none;
 }
 
 .PermissionsGrid-S_IRWXUGO {

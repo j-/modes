@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
+import './InputGroup.css';
 
 export interface InputGroupProps extends React.InputHTMLAttributes<HTMLInputElement> {
 

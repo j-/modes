@@ -1,0 +1,20 @@
+.InputGroup {
+	cursor: pointer;
+	padding: 0.5em;
+	border: 1px solid #ccc;
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+
+.InputGroup:hover {
+	background-color: #e0ebf0;
+}
+
+.InputGroup code {
+	margin: 0 0.5em;
+}
+
+.InputGroup input {
+	pointer-events: none;
+}

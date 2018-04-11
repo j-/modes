@@ -1,6 +1,5 @@
 import * as React from 'react';
 import FlagCheckbox from '../containers/FlagCheckbox';
-import './FlagsItem.css';
 
 export interface FlagsItemProps {
 	flag: number;
