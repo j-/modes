@@ -26,6 +26,14 @@
 	outline: none;
 }
 
+.Inputs-section:first-child {
+	padding-left: 0;
+}
+
+.Inputs-section:last-child {
+	padding-right: 0;
+}
+
 .Inputs-section input:focus {
 	border-color: #09c;
 }
