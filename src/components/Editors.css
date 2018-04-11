@@ -21,3 +21,11 @@
 	flex-direction: column;
 	justify-content: space-between;
 }
+
+.Editors-editor:first-child {
+	margin-left: 0;
+}
+
+.Editors-editor:last-child {
+	margin-right: 0;
+}
