@@ -20,6 +20,7 @@ const mapStateToProps = (state: ReducerState): TextInputProps => ({
 		'ModeInput--is-invalid': !isOctalInputValid(state),
 		'ModeInput--is-editing': isOctalInputEditing(state),
 	}),
+	list: 'octal-suggestions',
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): TextInputProps => ({

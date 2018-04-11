@@ -20,6 +20,7 @@ const mapStateToProps = (state: ReducerState): TextInputProps => ({
 		'ModeInput--is-invalid': !isDecimalInputValid(state),
 		'ModeInput--is-editing': isDecimalInputEditing(state),
 	}),
+	list: 'decimal-suggestions',
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): TextInputProps => ({
