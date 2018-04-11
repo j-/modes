@@ -1,16 +1,9 @@
 import { connect } from 'react-redux';
 import * as classNames from 'classnames';
-import TextInput from '../components/TextInput';
+import TextInput, { TextInputProps } from '../components/TextInput';
 import { ReducerState, getSymbolString } from '../store';
 
-interface StateProps {
-	value?: string | string[] | number;
-	type?: string;
-	className?: string;
-	readOnly?: boolean;
-}
-
-const mapStateToProps = (state: ReducerState): StateProps => ({
+const mapStateToProps = (state: ReducerState): TextInputProps => ({
 	value: getSymbolString(state),
 	type: 'string',
 	className: classNames('ModeInput', {
@@ -22,7 +15,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 
 const mapDispatchToProps = () => ({});
 
-export default connect<StateProps>(
+export default connect<TextInputProps, TextInputProps, TextInputProps>(
 	mapStateToProps,
 	mapDispatchToProps,
 )(TextInput);

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Dispatch, AnyAction } from 'redux';
 import * as classNames from 'classnames';
-import TextInput, { TextInputProps as OwnProps } from '../components/TextInput';
+import TextInput, { TextInputProps } from '../components/TextInput';
 import { setOctalValue, commitInputValues } from '../store/actions';
 import './ModeInput.css';
 
@@ -12,18 +12,7 @@ import {
 	isOctalInputEditing,
 } from '../store';
 
-interface StateProps {
-	value?: string | string[] | number;
-	type?: string;
-	className?: string;
-}
-
-interface DispatchProps {
-	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-	onBlur: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-const mapStateToProps = (state: ReducerState): StateProps => ({
+const mapStateToProps = (state: ReducerState): TextInputProps => ({
 	value: getOctalInputValue(state),
 	type: 'number',
 	className: classNames('ModeInput', {
@@ -32,14 +21,14 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 	}),
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): DispatchProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): TextInputProps => ({
 	onChange: (e) => dispatch(
 		setOctalValue(e.currentTarget.value)
 	),
 	onBlur: () => dispatch(commitInputValues()),
 });
 
-export default connect<StateProps, DispatchProps, OwnProps>(
+export default connect<TextInputProps, TextInputProps, TextInputProps>(
 	mapStateToProps,
 	mapDispatchToProps,
 )(TextInput);
