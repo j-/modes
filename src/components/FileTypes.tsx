@@ -3,6 +3,7 @@ import Section from './Section';
 import Card from './Card';
 import FileTypeUnknownRadio from '../containers/FileTypeUnknownRadio';
 import FileTypeRadio from '../containers/FileTypeRadio';
+import MaybeFlagLabel from '../containers/MaybeFlagLabel';
 import './FileTypes.css';
 
 import {
@@ -15,11 +16,7 @@ import {
 	S_IFIFO,
 } from '../stat';
 
-export interface FileTypesProps {
-	showFlag: boolean;
-}
-
-const FileTypes: React.StatelessComponent<FileTypesProps> = ({ showFlag }) => (
+const FileTypes: React.StatelessComponent = () => (
 	<Section className="FileTypes">
 		<Card>
 			<h2>File type</h2>
@@ -32,37 +29,37 @@ const FileTypes: React.StatelessComponent<FileTypesProps> = ({ showFlag }) => (
 					</label>
 					<label>
 						<FileTypeRadio name="FileTypeRadio" flag={S_IFSOCK} />
-						{showFlag && <code>S_IFSOCK</code>}
+						<MaybeFlagLabel name="S_IFSOCK" />
 						<strong>Socket</strong>
 					</label>
 					<label>
 						<FileTypeRadio name="FileTypeRadio" flag={S_IFLNK} />
-						{showFlag && <code>S_IFLNK</code>}
+						<MaybeFlagLabel name="S_IFLNK" />
 						<strong>Link</strong>
 					</label>
 					<label>
 						<FileTypeRadio name="FileTypeRadio" flag={S_IFREG} />
-						{showFlag && <code>S_IFREG</code>}
+						<MaybeFlagLabel name="S_IFREG" />
 						<strong>Regular</strong>
 					</label>
 					<label>
 						<FileTypeRadio name="FileTypeRadio" flag={S_IFBLK} />
-						{showFlag && <code>S_IFBLK</code>}
+						<MaybeFlagLabel name="S_IFBLK" />
 						<strong>Block</strong>
 					</label>
 					<label>
 						<FileTypeRadio name="FileTypeRadio" flag={S_IFDIR} />
-						{showFlag && <code>S_IFDIR</code>}
+						<MaybeFlagLabel name="S_IFDIR" />
 						<strong>Directory</strong>
 					</label>
 					<label>
 						<FileTypeRadio name="FileTypeRadio" flag={S_IFCHR} />
-						{showFlag && <code>S_IFCHR</code>}
+						<MaybeFlagLabel name="S_IFCHR" />
 						<strong>Character</strong>
 					</label>
 					<label>
 						<FileTypeRadio name="FileTypeRadio" flag={S_IFIFO} />
-						{showFlag && <code>S_IFIFO</code>}
+						<MaybeFlagLabel name="S_IFIFO" />
 						<strong>Pipe</strong>
 					</label>
 				</div>

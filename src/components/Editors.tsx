@@ -2,8 +2,8 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 import Section from './Section';
 import Card from './Card';
-import PermissionsGrid from '../containers/PermissionsGrid';
-import PermissionsSymbolic from '../containers/PermissionsSymbolic';
+import PermissionsGrid from './PermissionsGrid';
+import PermissionsSymbolic from './PermissionsSymbolic';
 import './Editors.css';
 
 export interface EditorsProps {

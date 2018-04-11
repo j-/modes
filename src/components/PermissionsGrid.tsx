@@ -1,5 +1,6 @@
 import * as React from 'react';
 import FlagCheckbox from '../containers/FlagCheckbox';
+import MaybeFlagLabel from '../containers/MaybeFlagLabel';
 import './PermissionsGrid.css';
 
 import {
@@ -24,85 +25,81 @@ import {
 	S_IXOTH,
 } from '../stat';
 
-export interface PermissionsGridProps {
-	showFlag: boolean;
-}
-
-const PermissionsGrid: React.StatelessComponent<PermissionsGridProps> = ({ showFlag }) => (
+const PermissionsGrid: React.StatelessComponent = () => (
 	<div className="PermissionsGrid">
 		<label className="PermissionsGrid-S_IRWXUGO">
 			<FlagCheckbox flag={S_IRWXUGO} />
-			{showFlag && <code>S_IRWXUGO</code>}
+			<MaybeFlagLabel name="S_IRWXUGO" />
 			<strong>All</strong>
 		</label>
 		<label className="PermissionsGrid-S_IRUGO">
 			<FlagCheckbox flag={S_IRUGO} />
-			{showFlag && <code>S_IRUGO</code>}
+			<MaybeFlagLabel name="S_IRUGO" />
 			<strong>Read</strong>
 		</label>
 		<label className="PermissionsGrid-S_IWUGO">
 			<FlagCheckbox flag={S_IWUGO} />
-			{showFlag && <code>S_IWUGO</code>}
+			<MaybeFlagLabel name="S_IWUGO" />
 			<strong>Write</strong>
 		</label>
 		<label className="PermissionsGrid-S_IXUGO">
 			<FlagCheckbox flag={S_IXUGO} />
-			{showFlag && <code>S_IXUGO</code>}
+			<MaybeFlagLabel name="S_IXUGO" />
 			<strong>Execute</strong>
 		</label>
 
 		<label className="PermissionsGrid-S_IRWXU">
 			<FlagCheckbox flag={S_IRWXU} />
-			{showFlag && <code>S_IRWXU</code>}
+			<MaybeFlagLabel name="S_IRWXU" />
 			<strong>User</strong>
 		</label>
 		<label className="PermissionsGrid-S_IRUSR">
 			<FlagCheckbox flag={S_IRUSR} />
-			{showFlag && <code>S_IRUSR</code>}
+			<MaybeFlagLabel name="S_IRUSR" />
 		</label>
 		<label className="PermissionsGrid-S_IWUSR">
 			<FlagCheckbox flag={S_IWUSR} />
-			{showFlag && <code>S_IWUSR</code>}
+			<MaybeFlagLabel name="S_IWUSR" />
 		</label>
 		<label className="PermissionsGrid-S_IXUSR">
 			<FlagCheckbox flag={S_IXUSR} />
-			{showFlag && <code>S_IXUSR</code>}
+			<MaybeFlagLabel name="S_IXUSR" />
 		</label>
 
 		<label className="PermissionsGrid-S_IRWXG">
 			<FlagCheckbox flag={S_IRWXG} />
-			{showFlag && <code>S_IRWXG</code>}
+			<MaybeFlagLabel name="S_IRWXG" />
 			<strong>Group</strong>
 		</label>
 		<label className="PermissionsGrid-S_IRGRP">
 			<FlagCheckbox flag={S_IRGRP} />
-			{showFlag && <code>S_IRGRP</code>}
+			<MaybeFlagLabel name="S_IRGRP" />
 		</label>
 		<label className="PermissionsGrid-S_IWGRP">
 			<FlagCheckbox flag={S_IWGRP} />
-			{showFlag && <code>S_IWGRP</code>}
+			<MaybeFlagLabel name="S_IWGRP" />
 		</label>
 		<label className="PermissionsGrid-S_IXGRP">
 			<FlagCheckbox flag={S_IXGRP} />
-			{showFlag && <code>S_IXGRP</code>}
+			<MaybeFlagLabel name="S_IXGRP" />
 		</label>
 
 		<label className="PermissionsGrid-S_IRWXO">
 			<FlagCheckbox flag={S_IRWXO} />
-			{showFlag && <code>S_IRWXO</code>}
+			<MaybeFlagLabel name="S_IRWXO" />
 			<strong>Other</strong>
 		</label>
 		<label className="PermissionsGrid-S_IROTH">
 			<FlagCheckbox flag={S_IROTH} />
-			{showFlag && <code>S_IROTH</code>}
+			<MaybeFlagLabel name="S_IROTH" />
 		</label>
 		<label className="PermissionsGrid-S_IWOTH">
 			<FlagCheckbox flag={S_IWOTH} />
-			{showFlag && <code>S_IWOTH</code>}
+			<MaybeFlagLabel name="S_IWOTH" />
 		</label>
 		<label className="PermissionsGrid-S_IXOTH">
 			<FlagCheckbox flag={S_IXOTH} />
-			{showFlag && <code>S_IXOTH</code>}
+			<MaybeFlagLabel name="S_IXOTH" />
 		</label>
 	</div>
 );
