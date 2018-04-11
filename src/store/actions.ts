@@ -65,3 +65,21 @@ export const isActionCommitInputValues = (action: Action): action is ActionCommi
 export const commitInputValues: ActionCreator<ActionCommitInputValues> = () => ({
 	type: 'CommitInputValues',
 });
+
+export interface ActionToggleFlags extends Action {
+	type: 'ToggleFlags';
+	data: {
+		showFlags: boolean;
+	};
+}
+
+export const isActionToggleFlags = (action: Action): action is ActionToggleFlags => (
+	action.type === 'ToggleFlags'
+);
+
+export const toggleFlags: ActionCreator<ActionToggleFlags> = (showFlags: boolean) => ({
+	type: 'ToggleFlags',
+	data: {
+		showFlags,
+	},
+});

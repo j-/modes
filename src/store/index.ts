@@ -6,16 +6,19 @@ import {
 	isActionSetOctalValue,
 	isActionSetDecimalValue,
 	isActionCommitInputValues,
+	isActionToggleFlags,
 } from './actions';
 
 export interface ReducerState {
 	mode: number;
+	showFlags: boolean;
 	octalValue: string | null;
 	decimalValue: string | null;
 }
 
 const DEFAULT_STATE: ReducerState = {
 	mode: 0o755,
+	showFlags: false,
 	octalValue: null,
 	decimalValue: null,
 };
@@ -66,6 +69,13 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 			...state,
 			octalValue: null,
 			decimalValue: null,
+		};
+	}
+
+	if (isActionToggleFlags(action)) {
+		return {
+			...state,
+			showFlags: action.data.showFlags,
 		};
 	}
 
@@ -124,4 +134,8 @@ export const isDecimalInputEditing = (state: ReducerState): boolean => (
 
 export const isDecimalInputValid = (state: ReducerState): boolean => (
 	state.decimalValue === null || !isNaN(parseInt(state.decimalValue, 10))
+);
+
+export const isShowingFlags = (state: ReducerState): boolean => (
+	state.showFlags
 );

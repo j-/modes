@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import PermissionsGrid from '../components/PermissionsGrid';
-import { ReducerState } from '../store';
+import { ReducerState, isShowingFlags } from '../store';
 
 interface StateProps {
 	showFlag: boolean;
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
-	showFlag: false,
+	showFlag: isShowingFlags(state),
 });
 
 export default connect<StateProps>(
