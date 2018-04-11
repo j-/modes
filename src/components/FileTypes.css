@@ -10,8 +10,7 @@
 }
 
 .FileTypes-radios label {
-	display: block;
-	flex-grow: 1;
+	flex: 1;
 	cursor: pointer;
 	padding: 0.5em;
 	border: 1px solid #ccc;
