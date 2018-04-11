@@ -1,0 +1,15 @@
+.FlagsList label {
+	flex: 1;
+	cursor: pointer;
+	padding: 0.5em;
+	border: 1px solid #ccc;
+	margin-right: -1px;
+	margin-bottom: -1px;
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+
+.FlagsList label:hover {
+	background-color: #e0ebf0;
+}

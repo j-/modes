@@ -2,6 +2,7 @@ import * as React from 'react';
 import Section from './Section';
 import Card from './Card';
 import FlagsItem from './FlagsItem';
+import './FlagsList.css';
 
 import {
 	S_IFSOCK,
