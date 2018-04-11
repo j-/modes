@@ -108,3 +108,21 @@ export const clearFileType: ActionCreator<ActionSetFileType> = () => ({
 		type: 0,
 	},
 });
+
+export interface ActionHighlightFlag extends Action {
+	type: 'HighlightFlag';
+	data: {
+		flag: number | null;
+	};
+}
+
+export const isActionHighlightFlag = (action: Action): action is ActionHighlightFlag => (
+	action.type === 'HighlightFlag'
+);
+
+export const highlightFlag: ActionCreator<ActionHighlightFlag> = (flag: number | null) => ({
+	type: 'HighlightFlag',
+	data: {
+		flag,
+	},
+});

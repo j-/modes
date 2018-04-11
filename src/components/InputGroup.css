@@ -7,6 +7,14 @@
 	align-items: baseline;
 }
 
+.InputGroup.InputGroup--highlight-partial {
+	background-color: hsl(50, 96%, 90%);
+}
+
+.InputGroup.InputGroup--highlight-exact {
+	background-color: hsl(50, 96%, 80%);
+}
+
 .InputGroup:hover {
 	background-color: #e0ebf0;
 }
