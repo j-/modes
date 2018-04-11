@@ -62,6 +62,6 @@ export const isActionCommitInputValues = (action: Action): action is ActionCommi
 	action.type === 'CommitInputValues'
 );
 
-export const commitInputValues: ActionCreator<ActionCommitInputValues> = (value: string) => ({
+export const commitInputValues: ActionCreator<ActionCommitInputValues> = () => ({
 	type: 'CommitInputValues',
 });
