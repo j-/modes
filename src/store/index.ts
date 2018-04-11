@@ -1,6 +1,5 @@
 import { Reducer } from 'redux';
 import { formatSymbolicString } from './symbolic';
-import { S_IFMT, S_IFSOCK, S_IFLNK, S_IFREG, S_IFCHR, S_IFIFO } from '../stat';
 
 import {
 	isActionToggleFlag,
@@ -10,7 +9,17 @@ import {
 	isActionToggleFlags,
 	isActionSetFileType,
 } from './actions';
-import { S_IFBLK, S_IFDIR } from 'constants';
+
+import {
+	S_IFMT,
+	S_IFSOCK,
+	S_IFLNK,
+	S_IFREG,
+	S_IFCHR,
+	S_IFIFO,
+	S_IFBLK,
+	S_IFDIR,
+} from '../stat';
 
 export interface ReducerState {
 	mode: number;
