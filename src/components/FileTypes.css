@@ -26,6 +26,6 @@
 	margin: 0 0.5em;
 }
 
-.FileTypes-radios label input[type=checkbox] {
+.FileTypes-radios label input[type=radio] {
 	pointer-events: none;
 }
