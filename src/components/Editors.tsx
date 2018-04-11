@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
+import Section from './Section';
 import Card from './Card';
 import PermissionsGrid from '../containers/PermissionsGrid';
 import PermissionsSymbolic from '../containers/PermissionsSymbolic';
@@ -16,14 +17,18 @@ const Editors: React.StatelessComponent<EditorsProps> = ({ showFlag }) => (
 			'Editors--horizontal': !showFlag,
 		})}
 	>
-		<Card className="Editors-editor">
-			<h2>Grid edit</h2>
-			<PermissionsGrid />
-		</Card>
-		<Card className="Editors-editor">
-			<h2>Symbolic edit</h2>
-			<PermissionsSymbolic />
-		</Card>
+		<Section className="Editors-editor">
+			<Card className="Editors-card">
+				<h2>Grid edit</h2>
+				<PermissionsGrid />
+			</Card>
+		</Section>
+		<Section className="Editors-editor">
+			<Card className="Editors-card">
+				<h2>Symbolic edit</h2>
+				<PermissionsSymbolic />
+			</Card>
+		</Section>
 	</div>
 );
 

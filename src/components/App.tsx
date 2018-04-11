@@ -12,20 +12,8 @@ const App: React.StatelessComponent = () => (
 		<h1>Mode</h1>
 
 		<Inputs />
-
-		<br />
-		<br />
-
 		<Editors />
-
-		<br />
-		<br />
-
 		<FileTypes />
-
-		<br />
-		<br />
-
 		<FlagsList />
 	</div>
 );

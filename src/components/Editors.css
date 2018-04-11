@@ -12,27 +12,12 @@
 
 .Editors-editor {
 	flex: 1;
-	border: 1px solid #ccc;
-	border-radius: 0.25em;
-	padding: 1em;
-	box-shadow: 0 0.2em 0.3em rgba(0, 0, 0, 0.1);
+}
+
+.Editors-card {
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-}
-
-.Editors--horizontal .Editors-editor {
-	margin: 0.5em;
-}
-
-.Editors--horizontal .Editors-editor:first-child {
-	margin-left: 0;
-}
-
-.Editors--horizontal .Editors-editor:last-child {
-	margin-right: 0;
-}
-
-.Editors--vertical .Editors-editor {
-	margin: 0.5em 0;
+	box-sizing: border-box;
 }

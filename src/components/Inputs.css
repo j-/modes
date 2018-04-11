@@ -11,12 +11,11 @@
 	flex: 3;
 }
 
-.Inputs-section {
-	padding: 0.5em;
+.Inputs-input-wrapper {
 	position: relative;
 }
 
-.Inputs-section input {
+.Inputs-input-wrapper input {
 	width: 100%;
 	font: 3em monospace;
 	box-sizing: border-box;
@@ -26,21 +25,13 @@
 	outline: none;
 }
 
-.Inputs-section:first-child {
-	padding-left: 0;
-}
-
-.Inputs-section:last-child {
-	padding-right: 0;
-}
-
-.Inputs-section input:focus {
+.Inputs-input-wrapper input:focus {
 	border-color: #09c;
 }
 
-.Inputs-section h2 {
+.Inputs-input-wrapper h2 {
 	position: absolute;
-	top: 1em;
-	left: 1em;
+	top: 0.75em;
+	left: 0.75em;
 	pointer-events: none;
 }
