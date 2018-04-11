@@ -1,5 +1,6 @@
 import { Reducer } from 'redux';
 import { formatSymbolicString } from './symbolic';
+import { S_IFMT, S_IFSOCK, S_IFLNK, S_IFREG, S_IFCHR, S_IFIFO } from '../stat';
 
 import {
 	isActionToggleFlag,
@@ -7,7 +8,9 @@ import {
 	isActionSetDecimalValue,
 	isActionCommitInputValues,
 	isActionToggleFlags,
+	isActionSetFileType,
 } from './actions';
+import { S_IFBLK, S_IFDIR } from 'constants';
 
 export interface ReducerState {
 	mode: number;
@@ -79,6 +82,15 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 		};
 	}
 
+	if (isActionSetFileType(action)) {
+		const { mode } = state;
+		const { type } = action.data;
+		return {
+			...state,
+			mode: mode & ~S_IFMT | type,
+		};
+	}
+
 	return state;
 };
 
@@ -139,3 +151,22 @@ export const isDecimalInputValid = (state: ReducerState): boolean => (
 export const isShowingFlags = (state: ReducerState): boolean => (
 	state.showFlags
 );
+
+export const getFileType = (state: ReducerState): number => (
+	getModeNumber(state) & S_IFMT
+);
+
+export const isFileTypeKnown = (state: ReducerState): boolean => {
+	switch (getFileType(state)) {
+		case S_IFSOCK:
+		case S_IFLNK:
+		case S_IFREG:
+		case S_IFBLK:
+		case S_IFDIR:
+		case S_IFCHR:
+		case S_IFIFO:
+			return true;
+		default:
+			return false;
+	}
+};

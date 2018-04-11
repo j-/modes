@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Favicon from '../containers/Favicon';
-import FileType from '../containers/FileType';
+import FileTypes from '../containers/FileTypes';
 import Inputs from './Inputs';
 import Editors from '../containers/Editors';
 import FlagsList from './FlagsList';
@@ -11,17 +11,17 @@ const App: React.StatelessComponent = () => (
 
 		<h1>Mode</h1>
 
-		<FileType />
-
-		<br />
-		<br />
-
 		<Inputs />
 
 		<br />
 		<br />
 
 		<Editors />
+
+		<br />
+		<br />
+
+		<FileTypes />
 
 		<br />
 		<br />

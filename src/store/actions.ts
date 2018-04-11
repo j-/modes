@@ -83,3 +83,21 @@ export const toggleFlags: ActionCreator<ActionToggleFlags> = (showFlags: boolean
 		showFlags,
 	},
 });
+
+export interface ActionSetFileType extends Action {
+	type: 'SetFileType';
+	data: {
+		type: number;
+	};
+}
+
+export const isActionSetFileType = (action: Action): action is ActionSetFileType => (
+	action.type === 'SetFileType'
+);
+
+export const setFileType: ActionCreator<ActionSetFileType> = (type: number) => ({
+	type: 'SetFileType',
+	data: {
+		type,
+	},
+});

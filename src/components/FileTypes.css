@@ -1,0 +1,32 @@
+.FileTypes fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+.FileTypes-radios {
+	display: flex;
+	flex-direction: row;
+}
+
+.FileTypes-radios label {
+	display: block;
+	flex-grow: 1;
+	cursor: pointer;
+	padding: 0.5em;
+	border: 1px solid #ccc;
+	margin-right: -1px;
+	margin-bottom: -1px;
+}
+
+.FileTypes-radios label:hover {
+	background-color: #e0ebf0;
+}
+
+.FileTypes-radios label code {
+	margin: 0 0.5em;
+}
+
+.FileTypes-radios label input[type=checkbox] {
+	pointer-events: none;
+}
