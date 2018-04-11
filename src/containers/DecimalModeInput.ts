@@ -15,6 +15,7 @@ import {
 const mapStateToProps = (state: ReducerState): TextInputProps => ({
 	value: getDecimalInputValue(state),
 	type: 'number',
+	min: 0,
 	className: classNames('ModeInput', {
 		'ModeInput--is-invalid': !isDecimalInputValid(state),
 		'ModeInput--is-editing': isDecimalInputEditing(state),

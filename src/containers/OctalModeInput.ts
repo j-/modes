@@ -15,6 +15,7 @@ import {
 const mapStateToProps = (state: ReducerState): TextInputProps => ({
 	value: getOctalInputValue(state),
 	type: 'number',
+	min: 0,
 	className: classNames('ModeInput', {
 		'ModeInput--is-invalid': !isOctalInputValid(state),
 		'ModeInput--is-editing': isOctalInputEditing(state),
