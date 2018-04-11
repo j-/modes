@@ -12,7 +12,6 @@
 
 .Editors-editor {
 	flex: 1;
-	margin: 0.5em;
 	border: 1px solid #ccc;
 	border-radius: 0.25em;
 	padding: 1em;
@@ -22,10 +21,18 @@
 	justify-content: space-between;
 }
 
-.Editors-editor:first-child {
+.Editors--horizontal .Editors-editor {
+	margin: 0.5em;
+}
+
+.Editors--horizontal .Editors-editor:first-child {
 	margin-left: 0;
 }
 
-.Editors-editor:last-child {
+.Editors--horizontal .Editors-editor:last-child {
 	margin-right: 0;
+}
+
+.Editors--vertical .Editors-editor {
+	margin: 0.5em 0;
 }
