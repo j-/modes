@@ -101,3 +101,10 @@ export const setFileType: ActionCreator<ActionSetFileType> = (type: number) => (
 		type,
 	},
 });
+
+export const clearFileType: ActionCreator<ActionSetFileType> = () => ({
+	type: 'SetFileType',
+	data: {
+		type: 0,
+	},
+});

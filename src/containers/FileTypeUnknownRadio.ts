@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Radio, { RadioProps as OwnProps } from '../components/Radio';
 import { ReducerState, isFileTypeKnown } from '../store';
-import { setFileType, ActionSetFileType } from '../store/actions';
+import { clearFileType, ActionSetFileType } from '../store/actions';
 import { Dispatch } from 'redux';
 
 interface StateProps {
@@ -17,7 +17,7 @@ const mapStateToProps = (state: ReducerState): StateProps => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<ActionSetFileType>): DispatchProps => ({
-	onChange: () => dispatch(setFileType(0)),
+	onChange: () => dispatch(clearFileType()),
 });
 
 const mergeProps = (stateProps: StateProps, dispatchProps: DispatchProps): OwnProps => ({
