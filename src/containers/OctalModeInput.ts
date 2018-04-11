@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { Dispatch, AnyAction } from 'redux';
 import * as classNames from 'classnames';
 import TextInput, { TextInputProps as OwnProps } from '../components/TextInput';
-import { setOctalValue } from '../store/actions';
+import { setOctalValue, commitInputValues } from '../store/actions';
 import './ModeInput.css';
 
 import {
@@ -20,6 +20,7 @@ interface StateProps {
 
 interface DispatchProps {
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	onBlur: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const mapStateToProps = (state: ReducerState): StateProps => ({
@@ -35,6 +36,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): DispatchProps => ({
 	onChange: (e) => dispatch(
 		setOctalValue(e.currentTarget.value)
 	),
+	onBlur: () => dispatch(commitInputValues()),
 });
 
 export default connect<StateProps, DispatchProps, OwnProps>(

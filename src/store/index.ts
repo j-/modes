@@ -1,6 +1,12 @@
 import { Reducer } from 'redux';
-import { isActionToggleFlag, isActionSetOctalValue, isActionSetDecimalValue } from './actions';
 import { formatSymbolicString } from './symbolic';
+
+import {
+	isActionToggleFlag,
+	isActionSetOctalValue,
+	isActionSetDecimalValue,
+	isActionCommitInputValues,
+} from './actions';
 
 export interface ReducerState {
 	mode: number;
@@ -52,6 +58,14 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 			mode,
 			octalValue: null,
 			decimalValue: value,
+		};
+	}
+
+	if (isActionCommitInputValues(action)) {
+		return {
+			...state,
+			octalValue: null,
+			decimalValue: null,
 		};
 	}
 

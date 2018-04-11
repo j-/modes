@@ -53,3 +53,15 @@ export const setDecimalValue: ActionCreator<ActionSetDecimalValue> = (value: str
 		value,
 	},
 });
+
+export interface ActionCommitInputValues extends Action {
+	type: 'CommitInputValues';
+}
+
+export const isActionCommitInputValues = (action: Action): action is ActionCommitInputValues => (
+	action.type === 'CommitInputValues'
+);
+
+export const commitInputValues: ActionCreator<ActionCommitInputValues> = (value: string) => ({
+	type: 'CommitInputValues',
+});
