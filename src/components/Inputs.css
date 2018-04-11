@@ -1,5 +1,6 @@
 .Inputs {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .Inputs-section-octal,
@@ -34,4 +35,16 @@
 	top: 0.75em;
 	left: 0.75em;
 	pointer-events: none;
+}
+
+@media (max-width: 767px) {
+	.Inputs-section {
+		width: 100%;
+		flex: auto;
+	}
+
+	.Inputs-input-wrapper input {
+		font-size: 2em;
+		padding: 2.25em 0.5em 0.5em;
+	}
 }

@@ -1,5 +1,6 @@
 .Editors {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .Editors--horizontal {
@@ -16,8 +17,17 @@
 
 .Editors-card {
 	height: 100%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	box-sizing: border-box;
+	overflow: auto;
+}
+
+@media (max-width: 1439px) {
+	.Editors-editor {
+		width: 100%;
+		flex: auto;
+	}
 }
