@@ -126,3 +126,21 @@ export const highlightFlag: ActionCreator<ActionHighlightFlag> = (flag: number |
 		flag,
 	},
 });
+
+export interface ActionToggleHighlight extends Action {
+	type: 'ToggleHighlight';
+	data: {
+		highlightBits: boolean;
+	};
+}
+
+export const isActionToggleHighlight = (action: Action): action is ActionToggleHighlight => (
+	action.type === 'ToggleHighlight'
+);
+
+export const toggleHighlight: ActionCreator<ActionToggleHighlight> = (highlightBits: boolean) => ({
+	type: 'ToggleHighlight',
+	data: {
+		highlightBits,
+	},
+});

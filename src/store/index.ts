@@ -9,6 +9,7 @@ import {
 	isActionToggleFlags,
 	isActionSetFileType,
 	isActionHighlightFlag,
+	isActionToggleHighlight,
 } from './actions';
 
 import {
@@ -27,6 +28,7 @@ export interface ReducerState {
 	showFlags: boolean;
 	octalValue: string | null;
 	decimalValue: string | null;
+	highlightBits: boolean;
 	highlightedFlag: number | null;
 }
 
@@ -35,6 +37,7 @@ const DEFAULT_STATE: ReducerState = {
 	showFlags: false,
 	octalValue: null,
 	decimalValue: null,
+	highlightBits: false,
 	highlightedFlag: null,
 };
 
@@ -107,6 +110,13 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 		return {
 			...state,
 			highlightedFlag: action.data.flag,
+		};
+	}
+
+	if (isActionToggleHighlight(action)) {
+		return {
+			...state,
+			highlightBits: action.data.highlightBits,
 		};
 	}
 
@@ -194,6 +204,12 @@ export const isFileTypeKnown = (state: ReducerState): boolean => {
 	}
 };
 
+export const isHighlightingBits = (state: ReducerState): boolean => (
+	state.highlightBits
+);
+
 export const getHighlightedFlag = (state: ReducerState): number | null => (
-	state.highlightedFlag
+	isHighlightingBits(state) ?
+		state.highlightedFlag :
+		null
 );
