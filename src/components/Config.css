@@ -1,0 +1,18 @@
+.Config label {
+	padding: 0.5em;
+	display: block;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.Config label:hover {
+	background-color: #e0ebf0;
+}
+
+.Config label input {
+	pointer-events: none;
+}
+
+.Config label p {
+	margin-bottom: 0;
+}
