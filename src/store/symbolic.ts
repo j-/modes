@@ -5,6 +5,8 @@ import {
 	S_IFLNK,
 	S_IFIFO,
 	S_IFSOCK,
+	S_IFREG,
+
 	S_ISUID,
 	S_ISGID,
 	S_ISVTX,
@@ -56,3 +58,57 @@ export const formatSymbolicString = (mode: number): string => (
 	formatGroup(mode) +
 	formatOther(mode)
 );
+
+export const parseFileType = (input: string): number | null => {
+	switch (input) {
+		case 's': return S_IFSOCK;
+		case 'l': return S_IFLNK;
+		case 'b': return S_IFBLK;
+		case 'd': return S_IFDIR;
+		case 'c': return S_IFCHR;
+		case 'p': return S_IFIFO;
+		case '-': return S_IFREG;
+		default: return null;
+	}
+};
+
+const symbolicExp = /^\s*([slbdcp\-])?(r|-)(w|-)(x|s|-)(r|-)(w|-)(x|s|-)(r|-)(w|-)(x|t|T|-)\s*$/;
+
+export const parseSymbolicString = (input: string): number | null => {
+	const match = input.match(symbolicExp);
+
+	if (!match) {
+		return null;
+	}
+
+	let result = 0;
+
+	if (match[1]) {
+		const type = parseFileType(match[1]);
+		if (!type) {
+			// Invalid file type. Exit early.
+			return null;
+		} else if (type !== S_IFREG) {
+			// Ignore regular files.
+			result += type;
+		}
+	}
+
+	if (match[ 2] === 'r') { result += S_IRUSR; }
+	if (match[ 3] === 'w') { result += S_IWUSR; }
+	if (match[ 4] === 'x') { result += S_IXUSR; }
+	if (match[ 4] === 's') { result += S_IXUSR; result += S_ISUID; }
+
+	if (match[ 5] === 'r') { result += S_IRGRP; }
+	if (match[ 6] === 'w') { result += S_IWGRP; }
+	if (match[ 7] === 'x') { result += S_IXGRP; }
+	if (match[ 7] === 's') { result += S_IXGRP; result += S_ISGID; }
+
+	if (match[ 8] === 'r') { result += S_IROTH; }
+	if (match[ 9] === 'w') { result += S_IWOTH; }
+	if (match[10] === 'x') { result += S_IXOTH; }
+	if (match[10] === 't') { result += S_IXOTH; result += S_ISVTX; }
+	if (match[10] === 'T') { result += S_ISVTX; }
+
+	return result;
+};

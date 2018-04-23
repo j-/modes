@@ -54,6 +54,24 @@ export const setDecimalValue: ActionCreator<ActionSetDecimalValue> = (value: str
 	},
 });
 
+export interface ActionSetSymbolicValue extends Action {
+	type: 'SetSymbolicValue';
+	data: {
+		value: string;
+	};
+}
+
+export const isActionSetSymbolicValue = (action: Action): action is ActionSetSymbolicValue => (
+	action.type === 'SetSymbolicValue'
+);
+
+export const setSymbolicValue: ActionCreator<ActionSetSymbolicValue> = (value: string) => ({
+	type: 'SetSymbolicValue',
+	data: {
+		value,
+	},
+});
+
 export interface ActionCommitInputValues extends Action {
 	type: 'CommitInputValues';
 }

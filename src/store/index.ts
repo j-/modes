@@ -1,10 +1,11 @@
 import { Reducer } from 'redux';
-import { formatSymbolicString } from './symbolic';
+import { formatSymbolicString, parseSymbolicString } from './symbolic';
 
 import {
 	isActionToggleFlag,
 	isActionSetOctalValue,
 	isActionSetDecimalValue,
+	isActionSetSymbolicValue,
 	isActionCommitInputValues,
 	isActionToggleFlags,
 	isActionSetFileType,
@@ -28,6 +29,7 @@ export interface ReducerState {
 	showFlags: boolean;
 	octalValue: string | null;
 	decimalValue: string | null;
+	symbolicValue: string | null;
 	highlightBits: boolean;
 	highlightedFlag: number | null;
 }
@@ -37,6 +39,7 @@ const DEFAULT_STATE: ReducerState = {
 	showFlags: false,
 	octalValue: null,
 	decimalValue: null,
+	symbolicValue: null,
 	highlightBits: false,
 	highlightedFlag: null,
 };
@@ -55,6 +58,7 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 				mode | flag,
 			octalValue: null,
 			decimalValue: null,
+			symbolicValue: null,
 		};
 	}
 
@@ -67,6 +71,7 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 			mode,
 			octalValue: value,
 			decimalValue: null,
+			symbolicValue: null,
 		};
 	}
 
@@ -79,6 +84,20 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 			mode,
 			octalValue: null,
 			decimalValue: value,
+			symbolicValue: null,
+		};
+	}
+
+	if (isActionSetSymbolicValue(action)) {
+		const { value } = action.data;
+		const parsed = parseSymbolicString(value);
+		const mode = value === '' ? 0 : parsed === null ? state.mode : parsed;
+		return {
+			...state,
+			mode,
+			octalValue: null,
+			decimalValue: null,
+			symbolicValue: value,
 		};
 	}
 
@@ -87,6 +106,7 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 			...state,
 			octalValue: null,
 			decimalValue: null,
+			symbolicValue: null,
 		};
 	}
 
@@ -179,6 +199,24 @@ export const getDecimalInputValue = (state: ReducerState): string => (
 
 export const isDecimalInputValid = (state: ReducerState): boolean => (
 	state.decimalValue === null || state.decimalValue === '' || !isNaN(parseInt(state.decimalValue, 10))
+);
+
+export const getSymbolicRawValue = (state: ReducerState): string | null => (
+	state.symbolicValue
+);
+
+export const isSymbolicInputEditing = (state: ReducerState): boolean => (
+	state.symbolicValue !== null
+);
+
+export const getSymbolicInputValue = (state: ReducerState): string => (
+	isSymbolicInputEditing(state) ?
+		getSymbolicRawValue(state) as string :
+		getSymbolString(state)
+);
+
+export const isSymbolicInputValid = (state: ReducerState): boolean => (
+	state.symbolicValue === null || state.symbolicValue === '' || parseSymbolicString(state.symbolicValue) !== null
 );
 
 export const isShowingFlags = (state: ReducerState): boolean => (
