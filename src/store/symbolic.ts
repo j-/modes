@@ -37,19 +37,19 @@ export const formatFileType = (mode: number): string => (
 export const formatUser = (mode: number): string => (
 	(mode & S_IRUSR ? 'r' : '-') +
 	(mode & S_IWUSR ? 'w' : '-') +
-	(mode & S_ISUID ? 's' : (mode & S_IXUSR ? 'x' : '-'))
+	(mode & S_ISUID ? (mode & S_IXUSR ? 's' : 'S') : (mode & S_IXUSR ? 'x' : '-'))
 );
 
 export const formatGroup = (mode: number): string => (
 	(mode & S_IRGRP ? 'r' : '-') +
 	(mode & S_IWGRP ? 'w' : '-') +
-	(mode & S_ISGID ? 's' : (mode & S_IXGRP ? 'x' : '-'))
+	(mode & S_ISGID ? (mode & S_IXGRP ? 's' : 'S') : (mode & S_IXGRP ? 'x' : '-'))
 );
 
 export const formatOther = (mode: number): string => (
 	(mode & S_IROTH ? 'r' : '-') +
 	(mode & S_IWOTH ? 'w' : '-') +
-	((mode & S_ISVTX) > 0 && (mode & S_IXOTH) === 0 ? 'T' : (mode & S_ISVTX ? 't' : (mode & S_IXOTH ? 'x' : '-')))
+	(mode & S_ISVTX ? (mode & S_IXOTH ? 't' : 'T') : (mode & S_IXOTH ? 'x' : '-'))
 );
 
 export const formatSymbolicString = (mode: number): string => (
