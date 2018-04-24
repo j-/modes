@@ -72,7 +72,7 @@ export const parseFileType = (input: string): number | null => {
 	}
 };
 
-const symbolicExp = /^\s*([slbdcp\-])?(r|-)(w|-)(x|s|-)(r|-)(w|-)(x|s|-)(r|-)(w|-)(x|t|T|-)\s*$/;
+const symbolicExp = /^\s*([slbdcp\-])?(r|-)(w|-)(x|s|S|-)(r|-)(w|-)(x|s|S|-)(r|-)(w|-)(x|t|T|-)\s*$/;
 
 export const parseSymbolicString = (input: string): number | null => {
 	const match = input.match(symbolicExp);
@@ -98,11 +98,13 @@ export const parseSymbolicString = (input: string): number | null => {
 	if (match[ 3] === 'w') { result += S_IWUSR; }
 	if (match[ 4] === 'x') { result += S_IXUSR; }
 	if (match[ 4] === 's') { result += S_IXUSR; result += S_ISUID; }
+	if (match[ 4] === 'S') { result += S_ISUID; }
 
 	if (match[ 5] === 'r') { result += S_IRGRP; }
 	if (match[ 6] === 'w') { result += S_IWGRP; }
 	if (match[ 7] === 'x') { result += S_IXGRP; }
 	if (match[ 7] === 's') { result += S_IXGRP; result += S_ISGID; }
+	if (match[ 7] === 'S') { result += S_ISGID; }
 
 	if (match[ 8] === 'r') { result += S_IROTH; }
 	if (match[ 9] === 'w') { result += S_IWOTH; }

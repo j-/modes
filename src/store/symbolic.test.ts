@@ -65,7 +65,9 @@ describe('parseSymbolicString()', () => {
 	});
 
 	it('handles sticky bits', () => {
+		expect(parseSymbolicString('rwSrwxrwx')).toBe(0o4677);
 		expect(parseSymbolicString('rwsrwxrwx')).toBe(0o4777);
+		expect(parseSymbolicString('rwsrwSrwx')).toBe(0o6767);
 		expect(parseSymbolicString('rwsrwsrwx')).toBe(0o6777);
 		expect(parseSymbolicString('rwsrwsrwT')).toBe(0o7776);
 		expect(parseSymbolicString('rwsrwsrwt')).toBe(0o7777);
