@@ -1,4 +1,5 @@
 import { Reducer } from 'redux';
+import * as leftPad from 'left-pad';
 import { formatSymbolicString, parseSymbolicString } from './symbolic';
 
 import {
@@ -154,7 +155,7 @@ export const getModeStringDecimal = (state: ReducerState): string => (
 );
 
 export const getModeStringOctal = (state: ReducerState): string => (
-	state.mode.toString(8).padStart(4, '0')
+	leftPad(state.mode.toString(8), 4, '0')
 );
 
 export const getModeStringBinary = (state: ReducerState): string => (
