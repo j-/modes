@@ -14,7 +14,6 @@ import {
 
 const mapStateToProps = (state: ReducerState): TextInputProps => ({
 	value: getSymbolicInputValue(state),
-	type: 'string',
 	className: classNames('ModeInput', {
 		'ModeInput--is-invalid': !isSymbolicInputValid(state),
 		'ModeInput--is-editing': isSymbolicInputEditing(state),

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Dispatch, AnyAction } from 'redux';
 import * as classNames from 'classnames';
-import TextInput, { TextInputProps } from '../components/TextInput';
+import NumberInput, { NumberInputProps } from '../components/NumberInput';
 import { setDecimalValue, commitInputValues } from '../store/actions';
 import './ModeInput.css';
 
@@ -12,9 +12,8 @@ import {
 	isDecimalInputEditing,
 } from '../store';
 
-const mapStateToProps = (state: ReducerState): TextInputProps => ({
+const mapStateToProps = (state: ReducerState): NumberInputProps => ({
 	value: getDecimalInputValue(state),
-	type: 'number',
 	min: 0,
 	className: classNames('ModeInput', {
 		'ModeInput--is-invalid': !isDecimalInputValid(state),
@@ -23,14 +22,14 @@ const mapStateToProps = (state: ReducerState): TextInputProps => ({
 	list: 'decimal-suggestions',
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): TextInputProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): NumberInputProps => ({
 	onChange: (e) => dispatch(
 		setDecimalValue(e.currentTarget.value)
 	),
 	onBlur: () => dispatch(commitInputValues()),
 });
 
-export default connect<TextInputProps, TextInputProps, TextInputProps>(
+export default connect<NumberInputProps, NumberInputProps, NumberInputProps>(
 	mapStateToProps,
 	mapDispatchToProps,
-)(TextInput);
+)(NumberInput);
