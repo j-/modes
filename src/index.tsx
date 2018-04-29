@@ -6,6 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import App from './components/App';
 import { Provider as StoreProvider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
+import handleLocation from './location';
 import './index.css';
 
 const store = createStore(rootReducer, composeWithDevTools());
@@ -17,3 +18,5 @@ ReactDOM.render(
 	document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
+
+handleLocation(store);
