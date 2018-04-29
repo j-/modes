@@ -16,11 +16,3 @@ afterAll(() => {
 it('has the right title', async () => {
 	expect(await page.title()).toBe('Modes');
 });
-
-it('renders the default mode in decimal', async () => {
-	await page.waitForSelector('.Mode');
-	const element = await page.$('.Mode');
-	expect(element).toBeTruthy();
-	const textContent = await page.$eval('.Mode', (el) => el.textContent);
-	expect(textContent).toBe('511');
-});
