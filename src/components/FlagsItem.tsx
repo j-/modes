@@ -1,5 +1,6 @@
 import * as React from 'react';
 import FlagCheckbox from '../containers/FlagCheckbox';
+import BinaryFlagLabel from '../containers/BinaryFlagLabel';
 import './FlagsItem.css';
 
 export interface FlagsItemProps {
@@ -11,7 +12,9 @@ const FlagsItem: React.StatelessComponent<FlagsItemProps> = ({ flag, children })
 		<span className="FlagsItem-label">
 			<span className="FlagsItem-children">{children}</span>
 			<span className="FlagsItem-octal">{flag.toString(8).padStart(7, '0')}</span>
-			<span className="FlagsItem-binary">{flag.toString(2).padStart(16, '0')}</span>
+			<span className="FlagsItem-binary">
+				<BinaryFlagLabel flag={flag} />
+			</span>
 		</span>
 	</FlagCheckbox>
 );
