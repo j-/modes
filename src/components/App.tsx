@@ -4,6 +4,7 @@ import Header from './Header';
 import FileTypes from './FileTypes';
 import Inputs from './Inputs';
 import Editors from '../containers/Editors';
+import StickyBits from './StickyBits';
 import FlagsList from './FlagsList';
 import Suggestions from './Suggestions';
 
@@ -15,6 +16,7 @@ const App: React.StatelessComponent = () => (
 
 		<Inputs />
 		<Editors />
+		<StickyBits />
 		<FileTypes />
 		<FlagsList />
 
