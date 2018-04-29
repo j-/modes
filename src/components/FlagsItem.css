@@ -10,3 +10,7 @@
 .FlagsItem-binary {
 	flex: 1;
 }
+
+.FlagsItem .BinaryFlagLabel {
+	pointer-events: none;
+}

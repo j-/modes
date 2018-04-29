@@ -22,7 +22,7 @@ const BinaryFlagLabel: React.StatelessComponent<BinaryFlagLabelProps> = ({ flag,
 			children.push(str);
 		}
 	}
-	return <code>{children}</code>;
+	return <code className="BinaryFlagLabel">{children}</code>;
 };
 
 export default BinaryFlagLabel;
