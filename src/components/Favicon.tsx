@@ -54,7 +54,8 @@ export default class Favicon extends React.Component<FaviconProps> {
 	private clean () {
 		const { head } = document;
 		const icons = head.querySelectorAll('link[rel~=shortcut], link[rel~=icon]');
-		for (const icon of Array.from(icons)) {
+		for (let i = 0; i < icons.length; i++) {
+			const icon = icons[i];
 			head.removeChild(icon);
 		}
 	}
