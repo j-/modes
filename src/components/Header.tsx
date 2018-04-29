@@ -7,7 +7,7 @@ import './Header.css';
 const Header: React.StatelessComponent = () => (
 	<Section className="Header">
 		<Card>
-			<h1>Mode</h1>
+			<h1>Modes</h1>
 
 			<h2>Configuration</h2>
 			<Config />
