@@ -1,0 +1,12 @@
+.FlagsItem-label {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	font-family: monospace;
+}
+
+.FlagsItem-children,
+.FlagsItem-octal,
+.FlagsItem-binary {
+	flex: 1;
+}
