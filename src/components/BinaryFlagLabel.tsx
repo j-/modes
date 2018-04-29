@@ -15,8 +15,8 @@ const BinaryFlagLabel: React.StatelessComponent<BinaryFlagLabelProps> = ({ flag,
 		if (checked) {
 			const highlighted = highlightedFlag && bit & highlightedFlag;
 			children.push(highlighted ?
-				<strong>{str}</strong> :
-				str
+				<strong key={index}>{str}</strong> :
+				<span key={index}>{str}</span>
 			);
 		} else {
 			children.push(str);
